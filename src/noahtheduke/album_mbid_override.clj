@@ -204,7 +204,9 @@
    "Machine Girl"
    {#{"Neon White Original Soundtrack"
       "Neon White Soundtrack Part 1 “The Wicked Heart”"
-      "Neon White Soundtrack Part 2 “The Burn That Cures”"}
+      "Neon White Soundtrack Part 1 \"The Wicked Heart\""
+      "Neon White Soundtrack Part 2 “The Burn That Cures”"
+      "Neon White Soundtrack Part 2 \"The Burn That Cures\""}
     {:normalized-album "Neon White Original Soundtrack"
      :album-mbid "6ff7c666-0b38-4c5d-8d04-5abbb59d0d96"}}
 

@@ -7,7 +7,9 @@
    [clojure.string :as str]
    [noahtheduke.album-mbid-override :refer [manual-album-mbid]]
    [noahtheduke.artist-override :refer [normalize-artist]]
-   [noahtheduke.track-title-override :refer [normalize-track-title]]))
+   [noahtheduke.track-title-override :refer [normalize-track-title]])
+  (:import
+    (java.time.temporal ChronoUnit)))
 
 (def last-fm-url "https://ws.audioscrobbler.com/2.0")
 (def last-fm-api-key "bc139a6bdeaa921ed70e49ca9a21f683")
@@ -27,14 +29,27 @@
         json-body (json/read-str (:body resp) {:key-fn keyword})]
     (assoc resp :json json-body)))
 
+(def week-start-ts
+  (-> (java.time.Instant/now)
+      (.minus 1 ChronoUnit/DAYS)
+      (.toEpochMilli)
+      (/ 1000)
+      int
+      ))
+
+(def week-end-ts
+  (-> (java.time.Instant/now)
+      (.toEpochMilli)
+      (/ 1000)))
+
 (def start-ts
-  (-> #inst "2023-01-01T00:00:01"
+  (-> #inst "2024-01-01T00:00:01"
       (.toInstant)
       (.toEpochMilli)
       (/ 1000)))
 
 (def end-ts
-  (-> #inst "2024-01-01T00:00:01"
+  (-> #inst "2025-01-01T00:00:01"
       (.toInstant)
       (.toEpochMilli)
       (/ 1000)))
@@ -59,8 +74,7 @@
    })
 
 (def albums-to-skip
-  #{"101 Dalmatians"
-    "Toto IV"})
+  #{})
 
 (defonce raw-json
   (->> (iteration
@@ -94,29 +108,30 @@
 (defn recent-tracks []
   (->> raw-json
        (keep (fn [scrobble]
-              (let [artist (-> scrobble :artist :#text normalize-artist)
-                    album (-> scrobble :album :#text (str/replace \’ \'))
-                    artist (get manual-album-artist album artist)
-                    album-mbid (-> scrobble :album :mbid)
-                    overrides (manual-album-mbid
-                                {:artist artist
-                                 :album album
-                                 :album-mbid album-mbid})
-                    normalized-album (or (:normalized-album overrides) album)
-                    album-mbid (or (:album-mbid overrides) album-mbid)
-                    title (-> (:name scrobble)
-                              (str/replace \’ \')
-                              (normalize-track-title))]
-                (when-not (albums-to-skip album)
-                  {:artist artist
-                   :image-url (->> (:image scrobble)
-                                   (filter #(= "medium" (:size %)))
-                                   (first)
-                                   (:#text))
-                   :album normalized-album
-                   :album-mbid album-mbid
-                   :mbid (:mbid scrobble)
-                   :title title}))))))
+               (when (map? scrobble)
+                 (let [artist (-> scrobble :artist :#text normalize-artist)
+                       album (-> scrobble :album :#text (str/replace \’ \'))
+                       artist (get manual-album-artist album artist)
+                       album-mbid (-> scrobble :album :mbid)
+                       overrides (manual-album-mbid
+                                  {:artist artist
+                                   :album album
+                                   :album-mbid album-mbid})
+                       normalized-album (or (:normalized-album overrides) album)
+                       album-mbid (or (:album-mbid overrides) album-mbid)
+                       title (-> (:name scrobble)
+                                 (str/replace \’ \')
+                                 (normalize-track-title))]
+                   (when-not (albums-to-skip album)
+                     {:artist artist
+                      :image-url (->> (:image scrobble)
+                                      (filter #(= "medium" (:size %)))
+                                      (first)
+                                      (:#text))
+                      :album normalized-album
+                      :album-mbid album-mbid
+                      :mbid (:mbid scrobble)
+                      :title title})))))))
 
 (comment
   (->> (recent-tracks)
@@ -221,7 +236,7 @@
                                        (apply merge-with +))
                  combined (->> (for [[title play-count] track-play-count
                                      :let [lc-title (normalize-track title)
-                                           length (get track-times lc-title 0)]]
+                                           length (or (get track-times lc-title) 0)]]
                                  [lc-title {:title title
                                             :artist artist
                                             :album n-a
@@ -258,11 +273,9 @@
 (->> (combined-album-play-time)
      (sort-by :total-play-time >)
      (take 25)
-     (map-indexed
-       (fn [idx elem]
-         (->> (cons (inc idx)
-                    ((juxt :artist :album :total-play-count :time-str ) elem))
-              (str/join " | "))))
+     (map-indexed (fn [idx item] (assoc item :idx (inc idx))))
+     (map #(->> ((juxt :idx :artist :album :total-play-count :time-str) %)
+                (str/join " | ")))
      (str/join "\n")
      (println))
 
@@ -271,7 +284,8 @@
      (mapcat (comp vals :combined))
      (sort-by :total-time >)
      (take 25)
-     (map #(->> ((juxt :artist :title :play-count :time-str) %)
+     (map-indexed (fn [idx item] (assoc item :idx (inc idx))))
+     (map #(->> ((juxt :idx :artist :title :play-count :time-str) %)
                 (str/join " | ")))
      (str/join "\n")
      (println))
@@ -292,7 +306,9 @@
                :time-str (time-str total-play-time)})))
      (sort-by :total-play-time >)
      (take 25)
-     (map #(->> ((juxt :artist :total-play-count :time-str) %)
-                (str/join " | ")))
+     (map-indexed (fn [idx item] (assoc item :idx (inc idx))))
+     (map (fn [o]
+            (->> ((juxt :idx :artist :total-play-count :time-str) o)
+                 (str/join " | "))))
      (str/join "\n")
      (println))
