@@ -433,6 +433,26 @@
   "Purgatory" 85613,
   "Committed" 116373,
   "Fornever" 129160},
+ ["Wicked" "c3adae20-19b4-40ff-97bf-faa099cf4a7d"]
+ {"Popular" 224000,
+  "Wonderful" 297000,
+  "Dear Old Shiz" 86000,
+  "Defying Gravity" 353000,
+  "For Good" 306000,
+  "I'm Not That Girl (Reprise)" 50173,
+  "As Long As You're Mine" 225000,
+  "Thank Goodness" 383000,
+  "One Short Day" 183000,
+  "I'm Not That Girl" 178000,
+  "No Good Deed" 211000,
+  "No One Mourns The Wicked" 400000,
+  "The Wizard And I" 309000,
+  "Something Bad" 99000,
+  "Dancing Through Life" 457000,
+  "March Of The Witch Hunters" 91000,
+  "What Is This Feeling?" 212000,
+  "Finale \"Wicked\"" 101000,
+  "A Sentimental Man" 76000},
  ["GAME" "39d2115d-4f42-4bb7-af84-1c953a57da59"]
  {"GAME" 306706,
   "Puppy love" 272706,
@@ -501,6 +521,15 @@
   "Sinister Will" 376000,
   "Malevolent Intentions" 277000,
   "Mortal" 512000},
+ ["The Last Will And Testament" "e38cdcfd-1e5b-4dd4-a0c2-c56516026b44"]
+ {"§1" 356733,
+  "§2" 333853,
+  "§3" 310067,
+  "§4" 420320,
+  "§5" 449600,
+  "§6" 363520,
+  "§7" 390280,
+  "A Story Never Told" 431973},
  ["American Gothic" "5902d22e-d1f9-463d-86e8-4546761a73a6"]
  {"The Thousand Tombs of Western Promise" 431000,
   "The Cattle Thief" 546000,
@@ -1888,6 +1917,27 @@
   "Heimdal" 486000},
  ["Hate Ashbury" "220551ac-08ec-4c5b-98cb-45c341f4abe8"]
  {"[untitled]" 774000},
+ ["Ultimate Christmas" "11837b85-6d2b-439c-a407-da0a4057b9da"]
+ {"Jingle Bells" 122160,
+  "Have Yourself a Merry Little Christmas" 238147,
+  "I Wouldn’t Trade Christmas" 172560,
+  "A Baby Just Like You" 167453,
+  "Silent Night" 211787,
+  "It Came Upon a Midnight Clear" 172000,
+  "The Bells of Christmas (Greensleeves)" 221320,
+  "The Christmas Waltz (1954 single version)" 181093,
+  "The Twelve Days of Christmas" 272013,
+  "An Old Fashioned Christmas" 227800,
+  "Whatever Happened to Christmas?" 186360,
+  "I Heard the Bells on Christmas Day" 156867,
+  "White Christmas (1954 single version)" 158253,
+  "Mistletoe and Holly" 139400,
+  "Santa Claus Is Coming to Town" 134827,
+  "The Little Drummer Boy" 185627,
+  "The First Noël" 164053,
+  "I’ll Be Home for Christmas (If Only in My Dreams)" 193267,
+  "Christmas Memories" 129013,
+  "The Christmas Song (Merry Christmas to You)" 209933},
  ["Cool It Down" "eaab81bf-dcbf-4bbd-a3bb-8ca749e14527"]
  {"Spitting Off the Edge of the World" 257000,
   "Lovebomb" 306000,
@@ -2511,6 +2561,17 @@
   "Thru the Walls" 236000,
   "5D" 43000,
   "Takyon (Death Yon)" 168000},
+ ["Everyday Is Christmas" "08b22da5-3005-475c-b0dd-bc69536503a9"]
+ {"Underneath the Christmas Lights" 216568,
+  "Santa’s Coming for Us" 206539,
+  "Puppies Are Forever" 223362,
+  "Snowman" 165900,
+  "Underneath the Mistletoe" 230196,
+  "Ho Ho Ho" 205626,
+  "Everyday Is Christmas" 203660,
+  "Candy Cane Lane" 212392,
+  "Sunshine" 205981,
+  "Snowflake" 242864},
  ["Solar Power" "034ab113-f9f5-4872-ab71-bbe3cb9f4302"]
  {"California" 191881,
   "Secrets From a Girl (Who’s Seen It All)" 218659,
@@ -2562,6 +2623,8 @@
   "Goose Eggs" nil,
   "Waltz of the 101st Lightborne" nil,
   "The Things I Say" nil},
+ ["Collapse" "d9d7dc83-e13f-42f0-a688-69126d2411af"]
+ {"Collapse" 333564, "Chasm" 276000},
  ["Mouth Dreams" "a82127e0-b12a-4e07-a772-eb04e2edd4de"]
  {"Closerflies" 215000,
   "Aerolong" 85000,
@@ -2713,6 +2776,12 @@
   "Wonder Why We Ever Go Home" 231640},
  ["Upon Loss Singles" "fa67d7be-6fe7-424c-8ccf-2270e62c2aaf"]
  {"Deep in the Willow" 211573, "Everything is Quiet Now" 215567},
+ ["Starspawn" "011ae4de-c0b6-4f2d-861b-bf091ab5fe35"]
+ {"Vitrification of Blood (Part 1)" 789080,
+  "Chaoplasm" 334173,
+  "Hidden Species (Vitrification of Blood Part 2)" 421080,
+  "Meticulous Soul Devourment" 255600,
+  "Starspawn" 260120},
  ["Harmonium" "694a1ff2-a97e-4da3-aee4-83ab2d7b26f8"]
  {"Papa" 159280,
   "Private Radio" 179760,
@@ -3443,6 +3512,17 @@
   "Violent Sleep of Reason" 411253},
  ["Terminal" "5d0ebede-7c34-4418-80cb-4258938e169c"]
  {"Slow" 1511000, "Death" 1095000},
+ ["A Jolly Christmas from Frank Sinatra"
+  "205f12cd-962e-4344-a2f0-a18c8bebd0f2"]
+ {"Have Yourself a Merry Little Christmas" 210866,
+  "Adeste Fideles" 155600,
+  "Silent Night" 150760,
+  "It Came Upon a Midnight Clear" 173773,
+  "The Christmas Song" 209933,
+  "I’ll Be Home for Christmas" 193200,
+  "O Little Town of Bethlehem" 127626,
+  "White Christmas" 157733,
+  "The Christmas Waltz" 184800},
  ["Severed (Original Soundtrack)"
   "c94b36e9-f31a-4261-b919-757e4e7084de"]
  {"Death" 143000,
@@ -4004,6 +4084,19 @@
  {"Haunted by Guilt" 225000},
  ["RETALIATION" "1b153a31-ff49-46e5-922c-c225853eee5b"]
  {"Born Lost" 213000, "The Heat" 137000, "Retaliation" 257000},
+ ["GNX" "9b68d302-2f85-4a9e-a40a-69c8d0df1433"]
+ {"luther" 177598,
+  "gloria" 287522,
+  "wacced out murals" 317092,
+  "man at the garden" 233173,
+  "hey now" 217478,
+  "tv off" 220690,
+  "gnx" 193539,
+  "dodger blue" 131240,
+  "squabble up" 157992,
+  "peekaboo" 155917,
+  "reincarnated" 275740,
+  "heart pt. 6" 292461},
  ["Un Verano Sin Ti" "aded3f90-b758-451a-aad7-711d5985b05f"]
  {"Neverita" 173000,
   "Otro atardecer" 244000,
@@ -4290,6 +4383,21 @@
   "No Doubt" 294093,
   "Think Twice" 259000,
   "We Hold Our Hearts Out to You" 251666},
+ ["Finally It's Christmas" "3a5b085e-e503-4b5f-84b3-6a30f2ba53a6"]
+ {"Jingle Bells" 20095,
+  "Have Yourself a Merry Little Christmas" 162997,
+  "Til New Years Night" 204072,
+  "Rudolph the Red Nosed Reindeer" 28410,
+  "Winter Wonderland" 159486,
+  "Someday at Christmas" 168168,
+  "Happy Christmas" 97493,
+  "Please Come Home" 207558,
+  "Finally It’s Christmas" 225620,
+  "A Wonderful Christmas Time" 192341,
+  "Blue Christmas" 178991,
+  "Peace on Earth" 207897,
+  "Joy to the Mountain" 160596,
+  "All I Want for Christmas" 209763},
  ["Virus" "008b8b25-2bd9-427e-ac53-a8a5bcbb3414"]
  {"Prosthetic" 358000, "Invasion" 402000, "Carousel" 629000},
  ["Pang" "3913f9b2-8622-4b0b-aeb5-3511d2b103bc"]
@@ -6842,6 +6950,17 @@
   "Sawdust & Diamonds" 595440,
   "Only Skin" 1013160,
   "Cosmia" 437160},
+ ["Wolf" "0d50cfbc-b1ef-44fc-bd1e-0e3a4520b69b"]
+ {"Domo23" 192000,
+  "Colossus" 213000,
+  "PartyIsntOver/Campfire/Bimmer" 438000,
+  "48" 247000,
+  "Awkward" 227000,
+  "Cowboy" 195000,
+  "Slater" 233000,
+  "Jamba" 212000,
+  "Wolf" 110000,
+  "Answer" 230000},
  ["Bomb Rush Cyberfunk Soundtrack"
   "f9343491-5fa2-4d8f-8d48-31acab5795fe"]
  {"Bounce Upon a Time" 340208,
@@ -7031,12 +7150,28 @@
   "Something Vague" 213000,
   "A Scale, a Mirror and Those Indifferent Clocks" 164000,
   "A Song to Pass the Time" 330240},
+ ["Songs For Christmas" "2542f5da-708a-456a-b456-4e722a449607"]
+ {"Silent Night" 44813,
+  "O Come O Come Emmanuel" 240560,
+  "We’re Goin’ to the Country!" 137173,
+  "Lo! How a Rose E’er Blooming" 202186,
+  "It’s Christmas! Let’s Be Glad!" 115120,
+  "Holy Holy, etc." 41093,
+  "Amazing Grace" 248960},
  ["Lore" "1591a0d8-033e-4c4d-8c87-82d394cd9aec"]
  {"Compendium" 639306,
   "Legend" 751426,
   "Lore" 957560,
   "Deadweight" 567653,
   "Spirit at Aphelion" 632026},
+ ["Disney Junior Music: Marvel's Spidey and His Amazing Friends"
+  "4359a73c-bd83-4d7e-81cb-628fb32ee54c"]
+ {"Super Hero" nil,
+  "Spin, Spin, Spin" nil,
+  "Super Hero on the Beat" nil,
+  "Trace-E Shake" nil,
+  "Marvel's Spidey and His Amazing Friends Theme (Extended)" nil,
+  "Time to Spidey Save the Day" nil},
  ["Raffi Radio" "4dcf5fba-b684-4f73-aae0-06b223270276"]
  {"Julia" 33866,
   "Raffi Radio" 210386,
@@ -7081,6 +7216,17 @@
   "Relay" 289000,
   "Rack of His" 222000,
   "Newspaper" 332000},
+ ["Leviathan" "31157474-6690-4121-b25c-3ddc497a4597"]
+ {"Iron Tusk" 183000,
+  "Ísland" 206000,
+  "Hearts Alive" 820000,
+  "Megalodon" 263000,
+  "Naked Burn" 222000,
+  "Seabeast" 255000,
+  "Blood and Thunder" 229000,
+  "Aqua Dementia" 250000,
+  "Joseph Merrick" 213000,
+  "I Am Ahab" 166000},
  ["Luminiferous" "16e5db0b-48a3-4f4b-9cac-8c3aa03e63d0"]
  {"The Black Plot" nil,
   "Carcosa" nil,
@@ -7581,6 +7727,33 @@
   "Enchanted" 352186,
   "Sparks Fly" 260933,
   "Innocent" 302253},
+ ["Hotline Miami Soundtrack" "f6e53936-b00d-4236-8a32-21031f6be1ed"]
+ {"Silver Lights" 452022,
+  "Crystals" 289776,
+  "Rust (El Huervo remix)" 357877,
+  "Release" 362292,
+  "Crush" 146938,
+  "Subbygroove" 326791,
+  "Vengeance" 300982,
+  "Electric Dreams" 285126,
+  "Hotline" 215693,
+  "Inner Animal" 220786,
+  "Daisuke" 161985,
+  "Musikk per Automatikk" 185208,
+  "Miami Disco" 271124,
+  "It’s Safe Now" 163709,
+  "Turf" 296855,
+  "Horse Steppin" 521848,
+  "Miami" 234866,
+  "To the Top" 192078,
+  "Flatline" 134452,
+  "Paris" 271255,
+  "Deep Cover" 481000,
+  "Knock Knock" 244427,
+  "Angel Dust" 313939,
+  "Hydrogen" 289593,
+  "Hotline (analogue mix)" 218000,
+  "A New Morning" 148349},
  ["Marielda: Friends At The Table Soundtrack, The Interlude"
   "55b35e33-d1c2-41e0-bf17-c09588e0984d"]
  {"The Heat and the Dark" 134000,
@@ -7690,6 +7863,8 @@
   "Vastness and Sorrow" 732506,
   "Cleansing" 595200,
   "I Will Lay Down My Bones Among the Rocks and Roots" 1096266},
+ ["A Coffin For Christmas" "b5e722cb-b74f-44ad-a120-17adce7f0acb"]
+ {"A Coffin for Christmas" 209848},
  ["The Money Store" "015ba8a6-97a9-4ad4-9ca4-382031177452"]
  {"Get Got" 171000,
   "The Fever (Aye Aye)" 187000,
@@ -8239,6 +8414,16 @@
  {"Sangfielle" 157000,
   "In the Depths by the Altar" 78000,
   "Polyte's Story" 181000},
+ ["Silver & Gold" "3353ba79-cb0d-4c29-9346-d5fc70ce36e3"]
+ {"Silent Night" 146000,
+  "Lumberjack Christmas / No One Can Save You From Christmases Past"
+  202000,
+  "Coventry Carol" 173000,
+  "The Midnight Clear" 169000,
+  "Carol of St. Benjamin the Bearded One" 212000,
+  "Go Nightly Cares" 104000,
+  "Barcarola (You Must Be a Christmas Tree)" 422000,
+  "Auld Lang Syne" 94000},
  ["Candy Coated Lie$" "7e948c10-c4b7-45fd-a559-706aa3a9a82a"]
  {"Candy Coated Lie$" 177000},
  ["One Light, One Sun" "89c9d5cc-ac12-4882-a5fd-1821512cdf16"]
@@ -8258,6 +8443,19 @@
   "Apples and Bananas" 100240,
   "One Light, One Sun" 128174,
   "Down on Grandpa's Farm" 165000},
+ ["A Christmas Cornucopia" "13d05ea2-994b-3285-a515-0d83aaceded5"]
+ {"God Rest Ye Merry Gentlemen" 212000,
+  "Silent Night" 228000,
+  "Lullay Lullay (The Coventry Carol)" 192000,
+  "The Holly and the Ivy" 217000,
+  "As Joseph Was a Walking (The Cherry Tree Carol)" 239000,
+  "O Little Town of Bethlehem" 213000,
+  "See Amid the Winter’s Snow" 210000,
+  "Il est né le divin enfant" 217000,
+  "Angels From the Realms of Glory" 240000,
+  "The First Noël" 280000,
+  "Universal Child" 254000,
+  "In the Bleak Midwinter" 211000},
  ["Endless Place" "81a8ad42-fe4c-4f92-bf2b-bdf1f6382877"]
  {"Endless Place" 638684, "Where the Light Fades" 399368},
  ["IV: Empires Collapse" "15659b91-b870-458b-9e15-6c52313ce769"]
@@ -8498,6 +8696,12 @@
   "Dunsel" 293000,
   "Moonlight" 290000,
   "Termites" 238000},
+ ["Yeah Yeah Yeahs" "450343e2-1bf0-4fe0-b827-4d79a4b16999"]
+ {"Bang" 189826,
+  "Mystery Girl" 177586,
+  "Art Star" 120866,
+  "Miles Away" 140693,
+  "Our Time" 204986},
  ["In Cauda Venenum" "10833cdd-55de-4515-b614-8decd842015f"]
  {"Heart in Hand" 509600,
   "All Things Will Pass" 513413,

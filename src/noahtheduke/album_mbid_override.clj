@@ -294,6 +294,10 @@
    {#{"劇變 (Jubian)"}
     {:album-mbid "5a141dc3-e6d6-4cac-a964-2c38b1093f93"}}
 
+   "Sabrina Carpenter"
+   {#{"Short n' Sweet"}
+    [:album-mbid "84190924-8e99-417e-9703-17b7722df4e7"]}
+
    "Spirit Adrift"
    {#{"Curse Of Conception"}
     {:album-mbid "08f77cd4-7285-428c-92ad-a963b7f7bf1d"}}

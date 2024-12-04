@@ -94,7 +94,10 @@
           :vf (fn [{:keys [json]}]
                 (let [{:keys [page totalPages]} (-> json :recenttracks ((keyword "@attr")))]
                   (println (format "Processing page %s of %s" page totalPages)))
-                (-> json :recenttracks :track))
+                (let [tracks (-> json :recenttracks :track)]
+                  (if (sequential? tracks)
+                    tracks
+                    [tracks])))
           :kf (fn [resp]
                 (let [{:keys [page totalPages]}
                       (-> resp :json :recenttracks ((keyword "@attr")))]
@@ -102,13 +105,13 @@
                             (parse-long totalPages))
                     (inc (parse-long page)))))
           :somef (fn [resp] (= 200 (:status resp)))})
-     (sequence cat)
-     (into [])))
+       (sequence cat)))
 
 (defn recent-tracks []
   (->> raw-json
        (keep (fn [scrobble]
-               (when (map? scrobble)
+               (if-not (map? scrobble)
+                 (println "NOT A MAP:" scrobble)
                  (let [artist (-> scrobble :artist :#text normalize-artist)
                        album (-> scrobble :album :#text (str/replace \’ \'))
                        artist (get manual-album-artist album artist)
@@ -163,8 +166,7 @@
   (->> (albums-by-count)
        vals
        (filter (comp not str/blank? :album-mbid))
-       (sort-by (comp str/lower-case :album))
-       (into [])))
+       (sort-by (comp str/lower-case :album))))
 
 (comment
   (albums-to-check)
@@ -178,13 +180,13 @@
        ; count
        ))
 
-(defn mb-get [mbid]
+(defn mb-get [album mbid]
   (let [req {:query-params {:fmt "json"
                             :inc "recordings"}
              :headers {:User-Agent user-agent}}]
     (try (:json (http-get (mb-url mbid) req))
          (catch Exception ex
-           (prn mbid (ex-message ex))))))
+           (prn album mbid (ex-message ex))))))
 
 (def album-data
   (let [existing (try (edn/read-string (slurp "album-data.edn"))
@@ -195,7 +197,7 @@
         :when (not (contains? @album-data [album album-mbid]))]
   (Thread/sleep 500)
   (println (format "Querying for %s" album))
-  (when-let [album-info (mb-get album-mbid)]
+  (when-let [album-info (mb-get album album-mbid)]
     (let [mb-tracks
           (->> (-> album-info :media first :tracks)
                (map (fn [t]
@@ -279,10 +281,35 @@
      (str/join "\n")
      (println))
 
+;; most listened song 
+(->> (combined-album-play-time)
+     (sort-by :total-play-time >)
+     (map (comp vals :combined))
+     (map #(sort-by :total-time > %))
+     (map first)
+     (take 25)
+     (map-indexed (fn [idx item]
+                    (assoc item :idx (inc idx))))
+     (map #(->> ((juxt :idx :artist :title :play-count :time-str) %)
+                (str/join " | ")))
+     (str/join "\n")
+     (println))
+
 ;; top tracks by play time
 (->> (combined-album-play-time)
      (mapcat (comp vals :combined))
      (sort-by :total-time >)
+     (take 25)
+     (map-indexed (fn [idx item] (assoc item :idx (inc idx))))
+     (map #(->> ((juxt :idx :artist :title :play-count :time-str) %)
+                (str/join " | ")))
+     (str/join "\n")
+     (println))
+
+;; top tracks by play count
+(->> (combined-album-play-time)
+     (mapcat (comp vals :combined))
+     (sort-by :play-count >)
      (take 25)
      (map-indexed (fn [idx item] (assoc item :idx (inc idx))))
      (map #(->> ((juxt :idx :artist :title :play-count :time-str) %)
@@ -312,3 +339,8 @@
                  (str/join " | "))))
      (str/join "\n")
      (println))
+
+(->> (combined-album-play-time)
+     (group-by :artist)
+     (keys)
+     count)
